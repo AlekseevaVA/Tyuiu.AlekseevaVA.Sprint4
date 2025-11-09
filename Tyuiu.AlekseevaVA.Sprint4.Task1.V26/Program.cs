@@ -1,7 +1,7 @@
-﻿using Tyuiu.AlekseevaVA.Sprint4.Task0.V26.Lib;
+﻿using Tyuiu.AlekseevaVA.Sprint4.Task1.V26.Lib;
 
 
-namespace Tyuiu.AlekseevaVA.Sprint4.Task0.V26
+namespace Tyuiu.AlekseevaVA.Sprint4.Task1.V26
 {
     class Program
     {
@@ -14,9 +14,9 @@ namespace Tyuiu.AlekseevaVA.Sprint4.Task0.V26
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #4                                                               *");
-            Console.WriteLine("* Тема: Одномерные массивы (статический ввод)                             *");
-            Console.WriteLine("* Задание #0                                                              *");
-            Console.WriteLine("* Вариант #26                                                              *");
+            Console.WriteLine("* Тема: Одномерные массивы                                                *");
+            Console.WriteLine("* Задание #1                                                              *");
+            Console.WriteLine("* Вариант #26                                                             *");
             Console.WriteLine("* Выполнила: Алексеева В. А. | ИИПб-25-1                                  *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
@@ -27,24 +27,34 @@ namespace Tyuiu.AlekseevaVA.Sprint4.Task0.V26
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-            int[] nums = { 9, 3, 7, 1, 5, 5, 3, 2, 1, 7 };
+            int len;
+            Console.WriteLine("Введите количество элементов массива: ");
+            len = Convert.ToInt32(Console.ReadLine());
+            int[] nums = new int[len];
 
-            Console.WriteLine("Исходный массив: ");
-
-            for (int i = 0; i < nums.Length; i++)
+            for (int i = 0; i <= len-1; i++)
             {
-                Console.Write(nums[i] + " ");
+                Console.Write("Введите значение" + i + "элемента массива:");
+                nums[i] = Convert.ToInt32(Console.ReadLine());
             }
+            Console.WriteLine();
+            Console.WriteLine("Массив: ");
+            for (int i = 0; i <= len - 1; i++)
+            {
+                Console.Write(nums[i]+ "\t");
+                
+            }
+            Console.WriteLine();
             Console.WriteLine();
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
-            double res = ds.GetSumOddArrEl(nums);
 
-            Console.WriteLine("Сумма нечетных элементов в массиве: " + res);
-
+            int res = ds.Calculate(nums);
+            Console.WriteLine(res);
             Console.ReadKey();
         }
     }
 }
+
